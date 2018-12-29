@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import './planets.dart';
 
 class PlanetManager extends StatefulWidget {
+  final String startingPlanet;
+
+  PlanetManager(this.startingPlanet);
+
   @override
   State createState() {
     return _PlanetManagerState();
@@ -10,7 +14,14 @@ class PlanetManager extends StatefulWidget {
 }
 
 class _PlanetManagerState extends State<PlanetManager> {
-  List<String> _planets = ['Saturn from list ok'];
+  List<String> _planets = [];
+
+
+  @override
+  void initState() {
+    _planets.add(widget.startingPlanet);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
