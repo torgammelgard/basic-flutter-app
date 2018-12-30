@@ -5,7 +5,7 @@ import './planets.dart';
 class PlanetManager extends StatefulWidget {
   final String startingPlanet;
 
-  PlanetManager(this.startingPlanet);
+  PlanetManager({this.startingPlanet = 'Earth'});
 
   @override
   State createState() {
@@ -30,6 +30,7 @@ class _PlanetManagerState extends State<PlanetManager> {
         Container(
           margin: EdgeInsets.all(10.0),
           child: RaisedButton(
+            color: Theme.of(context).primaryColor,
             child: Text('add planet'),
             onPressed: () {
               setState(() {

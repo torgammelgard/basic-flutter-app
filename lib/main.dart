@@ -8,11 +8,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+        brightness: Brightness.light,
+        accentColor: Colors.purple
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Amazing title'),
         ),
-        body: PlanetManager('Saturn inject'),
+        body: PlanetManager(startingPlanet: 'Saturn inject',),
       ),
     );
   }
